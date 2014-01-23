@@ -8,3 +8,5 @@ doc
 dist/appinfo.js
 dist/aws-sdk*.js
 dist/tests.js
+
+.idea
