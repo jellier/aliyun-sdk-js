@@ -10,3 +10,4 @@ dist/aws-sdk*.js
 dist/tests.js
 
 .idea
+.DS_Store
