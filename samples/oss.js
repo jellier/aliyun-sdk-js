@@ -3,7 +3,7 @@ var AWS = require('../lib/aws.js');
 //AWS.config.loadFromPath('./config.json');
 
 var oss = new AWS.OSS({
-  endpoint: 'http://10.230.201.90',//'http://oss-cn-hangzhou.aliyuncs.com',
+  endpoint: 'http://oss-test.aliyun-inc.com',//'http://oss-cn-hangzhou.aliyuncs.com',
   accessKeyId: 'pgvydev9bcbwpe3',//"DpqmTnnCVV45s7gP",
   secretAccessKey: 'ZXJ1ZzZqbTdraWp4eTlkZWhmMGk=',//"wJT5OddEiVW0o3BqolssXmD5MYWTJv",
   region: "us-west-1",
@@ -19,16 +19,27 @@ var oss = new AWS.OSS({
  Expires: 60
  });*/
 
-oss.listBuckets(function(err, data) {
-  if(err) {
+/*oss.listBuckets(function (err, data) {
+  if (err) {
     console.log(err);
     return;
   }
 
-  for (var index in data.Buckets) {
-    var bucket = data.Buckets[index];
-    console.log("Bucket: ", bucket.Name, ' : ', bucket.CreationDate);
+  console.log(data);
+});*/
+
+oss.createBucket({
+  Bucket: 'chylvina',
+  CreateBucketConfiguration: {
+    LocationConstraint: 'oss-cn-hangzhou-a'
   }
+}, function (err, data) {
+  if (err) {
+    console.log(err);
+    return;
+  }
+
+  console.log(data);
 });
 
 /*oss.putObject({
