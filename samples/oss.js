@@ -1,3 +1,5 @@
+var fs = require('fs');
+
 var AWS = require('../lib/aws.js');
 
 //AWS.config.loadFromPath('./config.json');
@@ -20,27 +22,38 @@ var oss = new AWS.OSS({
  });*/
 
 /*oss.listBuckets(function (err, data) {
-  if (err) {
-    console.log(err);
-    return;
-  }
+ if (err) {
+ console.log(err);
+ return;
+ }
 
-  console.log(data);
-});*/
+ console.log(data);
+ });*/
 
-oss.createBucket({
-  Bucket: 'chylvina',
-  CreateBucketConfiguration: {
-    LocationConstraint: 'oss-cn-hangzhou-a'
-  }
-}, function (err, data) {
-  if (err) {
-    console.log(err);
-    return;
-  }
+/*oss.createBucket({
+ Bucket: 'chylvina1',
+ CreateBucketConfiguration: {
+ LocationConstraint: 'oss-cn-hangzhou-a'
+ }
+ }, function (err, data) {
+ if (err) {
+ console.log(err);
+ return;
+ }
 
-  console.log(data);
-});
+ console.log(200, data);
+ });*/
+
+/*oss.deleteBucket({
+ Bucket: 'chylvina'
+ }, function (err, data) {
+ if (err) {
+ console.log(err);
+ return;
+ }
+
+ console.log(data);
+ });*/
 
 /*oss.putObject({
  Bucket: 'chylvina',
@@ -53,33 +66,81 @@ oss.createBucket({
 
  if (err) {
  console.log(err);
+ return;
  }
- else {
+
  console.log("Successfully uploaded data to Bucket:chylvina");
- }
-
- });*/
-
-/*s3.createBucket({
- Bucket: 'chylvinaBucket'
- },
- function (err, data) {
-
- if (err) {
- console.log(err)
- }
- else {
- console.log("Successfully create chylvinaBucket");
- }
 
  });*/
 
 /*
- var s3 = new AWS.S3();
- s3.getBucketAcl(params, function (err, data) {
+ oss.getObject({
+ Bucket: 'chylvina',
+ Key: 'test.html'
+ },
+ function (err, data) {
+
  if (err) {
- console.log(err); // an error occurred
- } else {
- console.log(data); // successful response
+ console.log(err);
+ return;
  }
+
+ console.log(200, data);
+
  });*/
+
+/*oss.deleteBucket({
+ Bucket: 'chylvina1'
+ }, function (err, data) {
+ if (err) {
+ console.log(err);
+ return;
+ }
+
+ console.log(200, data);
+ });*/
+
+/*
+ fs.readFile('testem.json', function (err, data) {
+ if (err) {
+ console.log(err);
+ return;
+ }
+
+ oss.putObject({
+ Bucket: 'chylvina',
+ Key: 'test.json',
+ Body: data,
+ ContentType: 'text/plain',
+ Expires: 60
+ },
+ function (err, data) {
+
+ if (err) {
+ console.log(err);
+ return;
+ }
+
+ console.log("Successfully uploaded data to Bucket:chylvina");
+
+ });
+ });*/
+
+oss.getObject({
+    Bucket: 'chylvina',
+    Key: 'test.json',
+    ResponseContentType: 'text/plain',
+    ResponseExpires: 60
+  },
+  function (err, data) {
+
+    if (err) {
+      console.log(err);
+      return;
+    }
+
+    console.log(200, data);
+
+    //console.log(data.Body.toString('utf8'));
+
+  });
