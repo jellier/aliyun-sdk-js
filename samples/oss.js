@@ -126,6 +126,7 @@ var oss = new AWS.OSS({
  });
  });*/
 
+/*
 oss.getObject({
     Bucket: 'chylvina',
     Key: 'test.json',
@@ -141,6 +142,46 @@ oss.getObject({
 
     console.log(200, data);
 
-    //console.log(data.Body.toString('utf8'));
+    console.log(data.Body.toString('utf8'));
+
+  });*/
+
+/*
+oss.deleteObject({
+    Bucket: 'chylvina',
+    Key: 'test.json'
+  },
+  function (err, data) {
+
+    if (err) {
+      console.log(err);
+      return;
+    }
+
+    console.log(200, data);
+
+  });*/
+
+oss.deleteObjects({
+    Bucket: 'chylvina',
+    Delete: {
+      Objects: [
+        {
+          Key: '1.html'
+        },
+        {
+          Key: '2.html'
+        }
+      ]
+    }
+  },
+  function (err, data) {
+
+    if (err) {
+      console.log(err);
+      return;
+    }
+
+    console.log(200, data);
 
   });
