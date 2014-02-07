@@ -12,3 +12,4 @@ dist/tests.js
 .idea
 .DS_Store
 tmp
+*.orig
