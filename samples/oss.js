@@ -9,7 +9,7 @@ var oss = new AWS.OSS({
   accessKeyId: 'pgvydev9bcbwpe3',//"DpqmTnnCVV45s7gP",
   secretAccessKey: 'ZXJ1ZzZqbTdraWp4eTlkZWhmMGk=',//"wJT5OddEiVW0o3BqolssXmD5MYWTJv",
   region: "us-west-1",
-  apiVersion: '2006-03-01',
+  apiVersion: '2013-10-15',
   httpOptions: {
     //proxy: 'http://127.0.0.1:8888'
   }
