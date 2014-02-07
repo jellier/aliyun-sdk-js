@@ -13,19 +13,21 @@ var oss = new ALY.OSS({
 });
 
 // -------------------------------
-// 5.3.9 Put Bucket
+// 5.3.4 Get Bucket (List Object)
 // -------------------------------
 
-oss.createBucket({
-  Bucket: 'chylvina1',
-  CreateBucketConfiguration: {
-    LocationConstraint: 'oss-cn-hangzhou-a'   // oss-cn-hangzhou-a 或者 oss-cn-qingdao-a
-  }
-}, function (err, data) {
-  if (err) {
-    console.log('error:', err);
-    return;
-  }
+oss.listObjects({
+    Bucket: 'chylvina',
+    MaxKeys: '2',
+    Prefix: '',
+    Marker: '',
+    Delimiter: ''
+  },
+  function (err, data) {
+    if (err) {
+      console.log('error:', err);
+      return;
+    }
 
-  console.log('success:', data);
-});
+    console.log('success:', data);
+  });

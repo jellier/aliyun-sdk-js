@@ -13,19 +13,19 @@ var oss = new ALY.OSS({
 });
 
 // -------------------------------
-// 5.3.9 Put Bucket
+// 5.3.3 Delete Bucket Website
 // -------------------------------
 
-oss.createBucket({
-  Bucket: 'chylvina1',
-  CreateBucketConfiguration: {
-    LocationConstraint: 'oss-cn-hangzhou-a'   // oss-cn-hangzhou-a 或者 oss-cn-qingdao-a
-  }
-}, function (err, data) {
-  if (err) {
-    console.log('error:', err);
-    return;
-  }
+// todo: not ready
 
-  console.log('success:', data);
-});
+oss.deleteBucketWebsite({
+    Bucket: 'chylvina'
+  },
+  function (err, data) {
+    if (err) {
+      console.log('error:', err);
+      return;
+    }
+
+    console.log('success:', data);
+  });
