@@ -13,13 +13,22 @@ var oss = new ALY.OSS({
 });
 
 // -------------------------------
-// 5.3.9 Put Bucket
+// 5.3.10 Put Bucket Acl
 // -------------------------------
 
-oss.createBucket({
-  Bucket: 'chylvina1',
-  CreateBucketConfiguration: {
-    LocationConstraint: 'oss-cn-hangzhou-a'   // oss-cn-hangzhou-a 或者 oss-cn-qingdao-a
+// todo: not ready, 文档没有给出正确的请求示例
+
+oss.putBucketWebsite({
+  Bucket: 'chylvina',
+  BucketLoggingStatus: {
+    WebsiteConfiguration: {
+      Bucket: 'chylvina',
+      WebsiteConfiguration: {
+        ErrorDocument: {
+          Key: ''
+        }
+      }
+    }
   }
 }, function (err, data) {
   if (err) {
