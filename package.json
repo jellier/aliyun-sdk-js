@@ -3,9 +3,9 @@
     "description": "Aliyun SDK for JavaScript",
     "version": "2.0.0-rc9",
     "author": {
-        "name":"Amazon Web Services",
-        "email":"",
-        "url":"http://aws.amazon.com/"
+        "name":"chylvina",
+        "email":"chylvina@gmail.com",
+        "url":"http://chylvina.com"
     },
     "homepage": "https://github.com/aws/aws-sdk-js",
     "contributors": [
