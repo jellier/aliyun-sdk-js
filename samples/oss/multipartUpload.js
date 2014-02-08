@@ -1,11 +1,11 @@
 // Based on Glacier's example: http://docs.aws.amazon.com/AWSJavaScriptSDK/guide/examples.html#Amazon_Glacier__Multi-part_Upload
 var fs = require('fs');
-var AWS = require('../lib/aws.js');
+var AWS = require('../../index.js');
 
-var s3 = new AWS.OSS({
-  endpoint: 'http://oss-test.aliyun-inc.com',//'http://oss-cn-hangzhou.aliyuncs.com',
-  accessKeyId: 'pgvydev9bcbwpe3',//"DpqmTnnCVV45s7gP",
-  secretAccessKey: 'ZXJ1ZzZqbTdraWp4eTlkZWhmMGk=',//"wJT5OddEiVW0o3BqolssXmD5MYWTJv",
+var oss = new AWS.OSS({
+  endpoint: 'http://oss-test.aliyun-inc.com',
+  accessKeyId: 'pgvydev9bcbwpe3',
+  secretAccessKey: 'ZXJ1ZzZqbTdraWp4eTlkZWhmMGk=',
   region: "us-west-1",
   apiVersion: '2013-10-15',
   httpOptions: {
@@ -13,18 +13,24 @@ var s3 = new AWS.OSS({
   }
 });
 
+// -------------------------------
+// 5.5 Multipart Upload
+// -------------------------------
+
+// todo: Abort Multipart Upload, List Multipart Uploads, List Parts 没有sample
+
 // File
-var fileName = '1.mp3';
-var filePath = 'tmp/' + fileName;
+var fileName = 'test.mp3';
+var filePath = './' + fileName;
 var fileKey = fileName;
-var buffer = fs.readFileSync('/Users/chylvina/Workspace/GitHub/aliyun-sdk-js/' + filePath);
-// S3 Upload options
+var buffer = fs.readFileSync(filePath);
+// Upload options
 var bucket = 'chylvina';
 
 // Upload
 var startTime = new Date();
 var partNum = 0;
-var partSize = 1024 * 1024 * 5; // Minimum 5MB per chunk (except the last part) http://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadComplete.html
+var partSize = 1024 * 1024 * 5; // Minimum 5MB per chunk (except the last part)
 var numPartsLeft = Math.ceil(buffer.length / partSize);
 var maxUploadTries = 3;
 
@@ -32,8 +38,8 @@ var multipartMap = {
   Parts: []
 };
 
-function completeMultipartUpload(s3, doneParams) {
-  s3.completeMultipartUpload(doneParams, function (err, data) {
+function completeMultipartUpload(oss, doneParams) {
+  oss.completeMultipartUpload(doneParams, function (err, data) {
     if (err) {
       console.log("An error occurred while completing the multipart upload");
       console.log(err);
@@ -45,14 +51,14 @@ function completeMultipartUpload(s3, doneParams) {
   });
 }
 
-function uploadPart(s3, multipart, partParams, tryNum) {
+function uploadPart(oss, multipart, partParams, tryNum) {
   var tryNum = tryNum || 1;
-  s3.uploadPart(partParams, function (multiErr, mData) {
+  oss.uploadPart(partParams, function (multiErr, mData) {
     if (multiErr) {
       console.log('multiErr, upload part error:', multiErr);
       if (tryNum < maxUploadTries) {
         console.log('Retrying upload of part: #', partParams.PartNumber)
-        uploadPart(s3, multipart, partParams, tryNum + 1);
+        uploadPart(oss, multipart, partParams, tryNum + 1);
       } else {
         console.log('Failed uploading part: #', partParams.PartNumber)
       }
@@ -74,16 +80,22 @@ function uploadPart(s3, multipart, partParams, tryNum) {
     };
 
     console.log("Completing upload...");
-    completeMultipartUpload(s3, doneParams);
+    completeMultipartUpload(oss, doneParams);
   });
 }
 
 // Multipart
 console.log("Creating multipart upload for:", fileKey);
-s3.createMultipartUpload({
+oss.createMultipartUpload({
+  ACL: 'public-read',
   Bucket: bucket,
   Key: fileKey,
-  ContentType: 'video/mp4'
+  ContentType: 'audio/mpeg',
+  ContentDisposition: ''
+  //CacheControl: '',
+  //ContentEncoding: '',
+  //Expires: '',
+  //ServerSideEncryption: ''
 }, function (mpErr, multipart) {
   if (mpErr) {
     console.log('Error!', mpErr);
@@ -105,6 +117,6 @@ s3.createMultipartUpload({
 
     // Send a single part
     console.log('Uploading part: #', partParams.PartNumber, ', Range start:', rangeStart);
-    uploadPart(s3, multipart, partParams);
+    uploadPart(oss, multipart, partParams);
   }
 });

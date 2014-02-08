@@ -1,6 +1,6 @@
 {
   "format": "rest-xml",
-  "apiVersion": "2006-03-01",
+  "apiVersion": "2013-10-15",
   "checksumFormat": "md5",
   "endpointPrefix": "s3",
   "globalEndpoint": "s3.amazonaws.com",
@@ -90,17 +90,17 @@
           "Expiration": {
             "type": "timestamp",
             "location": "header",
-            "name": "x-amz-expiration"
+            "name": "x-oss-expiration"
           },
           "Key": {},
           "Location": {},
           "ServerSideEncryption": {
             "location": "header",
-            "name": "x-amz-server-side-encryption"
+            "name": "x-oss-server-side-encryption"
           },
           "VersionId": {
             "location": "header",
-            "name": "x-amz-version-id"
+            "name": "x-oss-version-id"
           }
         }
       }
@@ -117,7 +117,7 @@
         "members": {
           "ACL": {
             "location": "header",
-            "name": "x-amz-acl"
+            "name": "x-oss-acl"
           },
           "Bucket": {
             "required": true,
@@ -146,27 +146,27 @@
           "CopySource": {
             "required": true,
             "location": "header",
-            "name": "x-amz-copy-source"
+            "name": "x-oss-copy-source"
           },
           "CopySourceIfMatch": {
             "type": "timestamp",
             "location": "header",
-            "name": "x-amz-copy-source-if-match"
+            "name": "x-oss-copy-source-if-match"
           },
           "CopySourceIfModifiedSince": {
             "type": "timestamp",
             "location": "header",
-            "name": "x-amz-copy-source-if-modified-since"
+            "name": "x-oss-copy-source-if-modified-since"
           },
           "CopySourceIfNoneMatch": {
             "type": "timestamp",
             "location": "header",
-            "name": "x-amz-copy-source-if-none-match"
+            "name": "x-oss-copy-source-if-none-match"
           },
           "CopySourceIfUnmodifiedSince": {
             "type": "timestamp",
             "location": "header",
-            "name": "x-amz-copy-source-if-unmodified-since"
+            "name": "x-oss-copy-source-if-unmodified-since"
           },
           "Expires": {
             "type": "timestamp",
@@ -175,19 +175,19 @@
           },
           "GrantFullControl": {
             "location": "header",
-            "name": "x-amz-grant-full-control"
+            "name": "x-oss-grant-full-control"
           },
           "GrantRead": {
             "location": "header",
-            "name": "x-amz-grant-read"
+            "name": "x-oss-grant-read"
           },
           "GrantReadACP": {
             "location": "header",
-            "name": "x-amz-grant-read-acp"
+            "name": "x-oss-grant-read-acp"
           },
           "GrantWriteACP": {
             "location": "header",
-            "name": "x-amz-grant-write-acp"
+            "name": "x-oss-grant-write-acp"
           },
           "Key": {
             "required": true,
@@ -196,25 +196,25 @@
           "Metadata": {
             "type": "map",
             "location": "header",
-            "name": "x-amz-meta-",
+            "name": "x-oss-meta-",
             "members": {},
             "keys": {}
           },
           "MetadataDirective": {
             "location": "header",
-            "name": "x-amz-metadata-directive"
+            "name": "x-oss-metadata-directive"
           },
           "ServerSideEncryption": {
             "location": "header",
-            "name": "x-amz-server-side-encryption"
+            "name": "x-oss-server-side-encryption"
           },
           "StorageClass": {
             "location": "header",
-            "name": "x-amz-storage-class"
+            "name": "x-oss-storage-class"
           },
           "WebsiteRedirectLocation": {
             "location": "header",
-            "name": "x-amz-website-redirect-location"
+            "name": "x-oss-website-redirect-location"
           }
         }
       },
@@ -223,15 +223,15 @@
         "members": {
           "CopySourceVersionId": {
             "location": "header",
-            "name": "x-amz-copy-source-version-id"
+            "name": "x-oss-copy-source-version-id"
           },
           "Expiration": {
             "location": "header",
-            "name": "x-amz-expiration"
+            "name": "x-oss-expiration"
           },
           "ServerSideEncryption": {
             "location": "header",
-            "name": "x-amz-server-side-encryption"
+            "name": "x-oss-server-side-encryption"
           },
           "ETag": {},
           "LastModified": {}
@@ -251,7 +251,7 @@
         "members": {
           "ACL": {
             "location": "header",
-            "name": "x-amz-acl"
+            "name": "x-oss-acl"
           },
           "Bucket": {
             "required": true,
@@ -265,23 +265,23 @@
           },
           "GrantFullControl": {
             "location": "header",
-            "name": "x-amz-grant-full-control"
+            "name": "x-oss-grant-full-control"
           },
           "GrantRead": {
             "location": "header",
-            "name": "x-amz-grant-read"
+            "name": "x-oss-grant-read"
           },
           "GrantReadACP": {
             "location": "header",
-            "name": "x-amz-grant-read-acp"
+            "name": "x-oss-grant-read-acp"
           },
           "GrantWrite": {
             "location": "header",
-            "name": "x-amz-grant-write"
+            "name": "x-oss-grant-write"
           },
           "GrantWriteACP": {
             "location": "header",
-            "name": "x-amz-grant-write-acp"
+            "name": "x-oss-grant-write-acp"
           }
         }
       },
@@ -307,7 +307,7 @@
         "members": {
           "ACL": {
             "location": "header",
-            "name": "x-amz-acl"
+            "name": "x-oss-acl"
           },
           "Bucket": {
             "required": true,
@@ -340,19 +340,19 @@
           },
           "GrantFullControl": {
             "location": "header",
-            "name": "x-amz-grant-full-control"
+            "name": "x-oss-grant-full-control"
           },
           "GrantRead": {
             "location": "header",
-            "name": "x-amz-grant-read"
+            "name": "x-oss-grant-read"
           },
           "GrantReadACP": {
             "location": "header",
-            "name": "x-amz-grant-read-acp"
+            "name": "x-oss-grant-read-acp"
           },
           "GrantWriteACP": {
             "location": "header",
-            "name": "x-amz-grant-write-acp"
+            "name": "x-oss-grant-write-acp"
           },
           "Key": {
             "required": true,
@@ -361,21 +361,21 @@
           "Metadata": {
             "type": "map",
             "location": "header",
-            "name": "x-amz-meta-",
+            "name": "x-oss-meta-",
             "members": {},
             "keys": {}
           },
           "ServerSideEncryption": {
             "location": "header",
-            "name": "x-amz-server-side-encryption"
+            "name": "x-oss-server-side-encryption"
           },
           "StorageClass": {
             "location": "header",
-            "name": "x-amz-storage-class"
+            "name": "x-oss-storage-class"
           },
           "WebsiteRedirectLocation": {
             "location": "header",
-            "name": "x-amz-website-redirect-location"
+            "name": "x-oss-website-redirect-location"
           }
         }
       },
@@ -388,7 +388,7 @@
           "Key": {},
           "ServerSideEncryption": {
             "location": "header",
-            "name": "x-amz-server-side-encryption"
+            "name": "x-oss-server-side-encryption"
           },
           "UploadId": {}
         }
@@ -399,6 +399,26 @@
       "http": {
         "method": "DELETE",
         "uri": "/{Bucket}"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "Bucket": {
+            "required": true,
+            "location": "uri"
+          }
+        }
+      },
+      "output": {
+        "type": "structure",
+        "members": {}
+      }
+    },
+    "deleteBucketLogging": {
+      "name": "DeleteBucketLogging",
+      "http": {
+        "method": "DELETE",
+        "uri": "/{Bucket}?logging"
       },
       "input": {
         "type": "structure",
@@ -533,7 +553,7 @@
           },
           "MFA": {
             "location": "header",
-            "name": "x-amz-mfa"
+            "name": "x-oss-mfa"
           },
           "VersionId": {
             "location": "uri"
@@ -546,11 +566,11 @@
           "DeleteMarker": {
             "type": "boolean",
             "location": "header",
-            "name": "x-amz-delete-marker"
+            "name": "x-oss-delete-marker"
           },
           "VersionId": {
             "location": "header",
-            "name": "x-amz-version-id"
+            "name": "x-oss-version-id"
           }
         }
       }
@@ -596,7 +616,7 @@
           },
           "MFA": {
             "location": "header",
-            "name": "x-amz-mfa"
+            "name": "x-oss-mfa"
           }
         }
       },
@@ -1181,7 +1201,7 @@
           "DeleteMarker": {
             "type": "boolean",
             "location": "header",
-            "name": "x-amz-delete-marker"
+            "name": "x-oss-delete-marker"
           },
           "ETag": {
             "location": "header",
@@ -1189,7 +1209,7 @@
           },
           "Expiration": {
             "location": "header",
-            "name": "x-amz-expiration"
+            "name": "x-oss-expiration"
           },
           "Expires": {
             "type": "timestamp",
@@ -1204,30 +1224,30 @@
           "Metadata": {
             "type": "map",
             "location": "header",
-            "name": "x-amz-meta-",
+            "name": "x-oss-meta-",
             "members": {},
             "keys": {}
           },
           "MissingMeta": {
             "type": "integer",
             "location": "header",
-            "name": "x-amz-missing-meta"
+            "name": "x-oss-missing-meta"
           },
           "Restore": {
             "location": "header",
-            "name": "x-amz-restore"
+            "name": "x-oss-restore"
           },
           "ServerSideEncryption": {
             "location": "header",
-            "name": "x-amz-server-side-encryption"
+            "name": "x-oss-server-side-encryption"
           },
           "VersionId": {
             "location": "header",
-            "name": "x-amz-version-id"
+            "name": "x-oss-version-id"
           },
           "WebsiteRedirectLocation": {
             "location": "header",
-            "name": "x-amz-website-redirect-location"
+            "name": "x-oss-website-redirect-location"
           }
         },
         "payload": "Body"
@@ -1425,7 +1445,7 @@
           "DeleteMarker": {
             "type": "boolean",
             "location": "header",
-            "name": "x-amz-delete-marker"
+            "name": "x-oss-delete-marker"
           },
           "ETag": {
             "location": "header",
@@ -1433,7 +1453,7 @@
           },
           "Expiration": {
             "location": "header",
-            "name": "x-amz-expiration"
+            "name": "x-oss-expiration"
           },
           "Expires": {
             "type": "timestamp",
@@ -1448,30 +1468,30 @@
           "Metadata": {
             "type": "map",
             "location": "header",
-            "name": "x-amz-meta-",
+            "name": "x-oss-meta-",
             "members": {},
             "keys": {}
           },
           "MissingMeta": {
             "type": "integer",
             "location": "header",
-            "name": "x-amz-missing-meta"
+            "name": "x-oss-missing-meta"
           },
           "Restore": {
             "location": "header",
-            "name": "x-amz-restore"
+            "name": "x-oss-restore"
           },
           "ServerSideEncryption": {
             "location": "header",
-            "name": "x-amz-server-side-encryption"
+            "name": "x-oss-server-side-encryption"
           },
           "VersionId": {
             "location": "header",
-            "name": "x-amz-version-id"
+            "name": "x-oss-version-id"
           },
           "WebsiteRedirectLocation": {
             "location": "header",
-            "name": "x-amz-website-redirect-location"
+            "name": "x-oss-website-redirect-location"
           }
         }
       }
@@ -1915,7 +1935,7 @@
         "members": {
           "ACL": {
             "location": "header",
-            "name": "x-amz-acl"
+            "name": "x-oss-acl"
           },
           "AccessControlPolicy": {
             "type": "structure",
@@ -1968,23 +1988,23 @@
           },
           "GrantFullControl": {
             "location": "header",
-            "name": "x-amz-grant-full-control"
+            "name": "x-oss-grant-full-control"
           },
           "GrantRead": {
             "location": "header",
-            "name": "x-amz-grant-read"
+            "name": "x-oss-grant-read"
           },
           "GrantReadACP": {
             "location": "header",
-            "name": "x-amz-grant-read-acp"
+            "name": "x-oss-grant-read-acp"
           },
           "GrantWrite": {
             "location": "header",
-            "name": "x-amz-grant-write"
+            "name": "x-oss-grant-write"
           },
           "GrantWriteACP": {
             "location": "header",
-            "name": "x-amz-grant-write-acp"
+            "name": "x-oss-grant-write-acp"
           }
         }
       },
@@ -2368,7 +2388,7 @@
           },
           "MFA": {
             "location": "header",
-            "name": "x-amz-mfa"
+            "name": "x-oss-mfa"
           },
           "VersioningConfiguration": {
             "type": "structure",
@@ -2480,7 +2500,11 @@
         "members": {
           "ACL": {
             "location": "header",
-            "name": "x-amz-acl"
+            "name": "x-oss-acl"
+          },
+          "AccessControlAllowOrigin": {
+            "location": "header",
+            "name": "Access-Control-Allow-Origin"
           },
           "Body": {
             "type": "binary",
@@ -2526,19 +2550,19 @@
           },
           "GrantFullControl": {
             "location": "header",
-            "name": "x-amz-grant-full-control"
+            "name": "x-oss-grant-full-control"
           },
           "GrantRead": {
             "location": "header",
-            "name": "x-amz-grant-read"
+            "name": "x-oss-grant-read"
           },
           "GrantReadACP": {
             "location": "header",
-            "name": "x-amz-grant-read-acp"
+            "name": "x-oss-grant-read-acp"
           },
           "GrantWriteACP": {
             "location": "header",
-            "name": "x-amz-grant-write-acp"
+            "name": "x-oss-grant-write-acp"
           },
           "Key": {
             "required": true,
@@ -2547,21 +2571,21 @@
           "Metadata": {
             "type": "map",
             "location": "header",
-            "name": "x-amz-meta-",
+            "name": "x-oss-meta-",
             "members": {},
             "keys": {}
           },
           "ServerSideEncryption": {
             "location": "header",
-            "name": "x-amz-server-side-encryption"
+            "name": "x-oss-server-side-encryption"
           },
           "StorageClass": {
             "location": "header",
-            "name": "x-amz-storage-class"
+            "name": "x-oss-storage-class"
           },
           "WebsiteRedirectLocation": {
             "location": "header",
-            "name": "x-amz-website-redirect-location"
+            "name": "x-oss-website-redirect-location"
           }
         }
       },
@@ -2575,15 +2599,15 @@
           "Expiration": {
             "type": "timestamp",
             "location": "header",
-            "name": "x-amz-expiration"
+            "name": "x-oss-expiration"
           },
           "ServerSideEncryption": {
             "location": "header",
-            "name": "x-amz-server-side-encryption"
+            "name": "x-oss-server-side-encryption"
           },
           "VersionId": {
             "location": "header",
-            "name": "x-amz-version-id"
+            "name": "x-oss-version-id"
           }
         }
       }
@@ -2600,7 +2624,7 @@
         "members": {
           "ACL": {
             "location": "header",
-            "name": "x-amz-acl"
+            "name": "x-oss-acl"
           },
           "AccessControlPolicy": {
             "type": "structure",
@@ -2653,23 +2677,23 @@
           },
           "GrantFullControl": {
             "location": "header",
-            "name": "x-amz-grant-full-control"
+            "name": "x-oss-grant-full-control"
           },
           "GrantRead": {
             "location": "header",
-            "name": "x-amz-grant-read"
+            "name": "x-oss-grant-read"
           },
           "GrantReadACP": {
             "location": "header",
-            "name": "x-amz-grant-read-acp"
+            "name": "x-oss-grant-read-acp"
           },
           "GrantWrite": {
             "location": "header",
-            "name": "x-amz-grant-write"
+            "name": "x-oss-grant-write"
           },
           "GrantWriteACP": {
             "location": "header",
-            "name": "x-amz-grant-write-acp"
+            "name": "x-oss-grant-write-acp"
           },
           "Key": {
             "required": true,
@@ -2768,7 +2792,7 @@
           },
           "ServerSideEncryption": {
             "location": "header",
-            "name": "x-amz-server-side-encryption"
+            "name": "x-oss-server-side-encryption"
           }
         }
       }
@@ -2789,31 +2813,31 @@
           "CopySource": {
             "required": true,
             "location": "header",
-            "name": "x-amz-copy-source"
+            "name": "x-oss-copy-source"
           },
           "CopySourceIfMatch": {
             "type": "timestamp",
             "location": "header",
-            "name": "x-amz-copy-source-if-match"
+            "name": "x-oss-copy-source-if-match"
           },
           "CopySourceIfModifiedSince": {
             "type": "timestamp",
             "location": "header",
-            "name": "x-amz-copy-source-if-modified-since"
+            "name": "x-oss-copy-source-if-modified-since"
           },
           "CopySourceIfNoneMatch": {
             "type": "timestamp",
             "location": "header",
-            "name": "x-amz-copy-source-if-none-match"
+            "name": "x-oss-copy-source-if-none-match"
           },
           "CopySourceIfUnmodifiedSince": {
             "type": "timestamp",
             "location": "header",
-            "name": "x-amz-copy-source-if-unmodified-since"
+            "name": "x-oss-copy-source-if-unmodified-since"
           },
           "CopySourceRange": {
             "location": "header",
-            "name": "x-amz-copy-source-range"
+            "name": "x-oss-copy-source-range"
           },
           "Key": {
             "required": true,
@@ -2835,11 +2859,11 @@
         "members": {
           "CopySourceVersionId": {
             "location": "header",
-            "name": "x-amz-copy-source-version-id"
+            "name": "x-oss-copy-source-version-id"
           },
           "ServerSideEncryption": {
             "location": "header",
-            "name": "x-amz-server-side-encryption"
+            "name": "x-oss-server-side-encryption"
           },
           "ETag": {},
           "LastModified": {
