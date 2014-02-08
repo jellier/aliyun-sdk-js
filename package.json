@@ -1,6 +1,6 @@
 {
-    "name": "aws-sdk",
-    "description": "AWS SDK for JavaScript",
+    "name": "aliyun-sdk",
+    "description": "Aliyun SDK for JavaScript",
     "version": "2.0.0-rc9",
     "author": {
         "name":"Amazon Web Services",
@@ -9,8 +9,7 @@
     },
     "homepage": "https://github.com/aws/aws-sdk-js",
     "contributors": [
-      "Loren Segal <lsegal@amazon.com>",
-      "Trevor Rowe <trevrowe@amazon.com>"
+
     ],
     "devDependencies": {
       "repl.history": "",
