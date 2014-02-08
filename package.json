@@ -1,13 +1,13 @@
 {
     "name": "aliyun-sdk",
     "description": "Aliyun SDK for JavaScript",
-    "version": "2.0.0-rc9",
+    "version": "0.1.0",
     "author": {
         "name":"chylvina",
         "email":"chylvina@gmail.com",
         "url":"http://chylvina.com"
     },
-    "homepage": "https://github.com/aws/aws-sdk-js",
+    "homepage": "https://github.com/chylvina/aliyun-sdk-js",
     "contributors": [
 
     ],
@@ -33,21 +33,17 @@
     },
     "repository": {
         "type" : "git",
-        "url": "git://github.com/aws/aws-sdk-js"
+        "url": "git://github.com/chylvina/aliyun-sdk-js.git"
     },
    "bugs" : {
-        "url" : "http://github.com/aws/aws-sdk-js/issues",
+        "url" : "https://github.com/chylvina/aliyun-sdk-js/issues",
         "mail" : ""
     },
     "licenses": [{
-        "type": "Apache 2.0",
-        "url": "http://github.com/aws/aws-sdk-js/raw/master/LICENSE.txt"
+        "type": "Apache 2.0"
     }],
     "keywords": [
-        "api", "amazon","aws","ec2","simpledb","s3","sqs","ses","sns","route53","rds","elasticache","cloudfront","fps",
-        "cloudformation","cloudwatch","dynamodb","iam","swf","autoscaling","cloudsearch","elb",
-        "loadbalancing","emr","mapreduce","importexport","storagegateway","workflow","ebs","vpc","beanstalk",
-        "glacier"
+
     ],
     "scripts" : {
         "test" : "npm -s run-script lint && npm -s run-script unit && ([ -f configuration ] && npm -s run-script integration || true)",
