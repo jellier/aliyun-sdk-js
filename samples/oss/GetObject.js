@@ -13,21 +13,31 @@ var oss = new ALY.OSS({
 });
 
 // -------------------------------
-// 5.3.4 Get Bucket (List Object)
+// 5.4.4 Get Object
 // -------------------------------
 
-oss.listObjects({
+oss.getObject({
     Bucket: 'chylvina',
-    MaxKeys: '10',
-    Prefix: '',
-    Marker: '',
-    Delimiter: ''
+    Key: '9.html'
+    //Range: '',
+    //IfModifiedSince: '',
+    //IfUnmodifiedSince: '',
+    //IfMatch: '',
+    //IfNoneMatch: '',
+    //ResponseContentType: '',
+    //ResponseContentLanguage: '',
+    //ResponseExpires: '60',
+    //ResponseCacheControl: '',
+    //ResponseContentDisposition: '',
+    //ResponseContentEncoding: ''
   },
   function (err, data) {
+
     if (err) {
       console.log('error:', err);
       return;
     }
 
     console.log('success:', data);
+
   });

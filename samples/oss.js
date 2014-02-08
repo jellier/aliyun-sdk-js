@@ -15,6 +15,34 @@ var oss = new AWS.OSS({
   }
 });
 
+oss.listObjects({
+    Bucket: 'chylvina'
+  },
+  function (err, data) {
+
+    if (err) {
+      console.log(err);
+      return;
+    }
+
+    console.log(200, data);
+
+  });
+
+// -------------------------------
+// 5.3.1 Delete Bucket
+// -------------------------------
+oss.deleteBucket({
+  Bucket: 'chylvina'
+}, function (err, data) {
+  if (err) {
+    console.log(err);
+    return;
+  }
+
+  console.log(200, data);
+});
+
 /*var url = oss.getSignedUrl('getObject', {
  Bucket: 'chylvina',
  Key: '1.txt',
@@ -87,17 +115,6 @@ var oss = new AWS.OSS({
 
  console.log(200, data);
 
- });*/
-
-/*oss.deleteBucket({
- Bucket: 'chylvina1'
- }, function (err, data) {
- if (err) {
- console.log(err);
- return;
- }
-
- console.log(200, data);
  });*/
 
 /*
@@ -186,16 +203,3 @@ var oss = new AWS.OSS({
 
  });*/
 
-oss.listObjects({
-    Bucket: 'chylvina'
-  },
-  function (err, data) {
-
-    if (err) {
-      console.log(err);
-      return;
-    }
-
-    console.log(200, data);
-
-  });

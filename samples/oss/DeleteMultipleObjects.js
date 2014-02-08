@@ -13,21 +13,30 @@ var oss = new ALY.OSS({
 });
 
 // -------------------------------
-// 5.3.4 Get Bucket (List Object)
+// 5.4.3 Delete Multiple Objects
 // -------------------------------
 
-oss.listObjects({
+oss.deleteObjects({
     Bucket: 'chylvina',
-    MaxKeys: '10',
-    Prefix: '',
-    Marker: '',
-    Delimiter: ''
+    Delete: {
+      Objects: [
+        {
+          Key: '6.html'
+        },
+        {
+          Key: '7.html'
+        }
+      ],
+      Quiet: true
+    }
   },
   function (err, data) {
+
     if (err) {
       console.log('error:', err);
       return;
     }
 
     console.log('success:', data);
+
   });

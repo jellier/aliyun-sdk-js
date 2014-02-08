@@ -1,6 +1,2 @@
-/**
- *
- * Author: xiongliang.xl@alibaba-inc.com
- * Since: 2/7/14 16:51
- * Description:
- */
+var ALY = require('./lib/aws');
+module.exports = ALY;
