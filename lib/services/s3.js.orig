@@ -90,7 +90,7 @@ AWS.S3 = AWS.Service.defineService('s3', ['2006-03-01'], {
 
     // TODO: compute checksums for Stream objects
     if (!AWS.util.Buffer.isBuffer(req.httpRequest.body) &&
-        typeof req.httpRequest.body !== 'string') {
+      typeof req.httpRequest.body !== 'string') {
       return false;
     }
 
@@ -172,7 +172,7 @@ AWS.S3 = AWS.Service.defineService('s3', ['2006-03-01'], {
     var req = resp.request;
     var httpResponse = resp.httpResponse;
     if (req.operation === 'completeMultipartUpload' &&
-        httpResponse.body.toString().match('<Error>'))
+      httpResponse.body.toString().match('<Error>'))
       return false;
     else
       return httpResponse.statusCode < 300;
@@ -184,7 +184,7 @@ AWS.S3 = AWS.Service.defineService('s3', ['2006-03-01'], {
    */
   retryableError: function retryableError(error, request) {
     if (request.operation == 'completeMultipartUpload' &&
-        error.statusCode === 200) {
+      error.statusCode === 200) {
       return true;
     } else {
       var _super = AWS.Service.prototype.retryableError;
@@ -296,7 +296,11 @@ AWS.S3 = AWS.Service.defineService('s3', ['2006-03-01'], {
    *   console.log('The URL is', url); // expires in 60 seconds
    */
   getSignedUrl: function getSignedUrl(operation, params, callback) {
+<<<<<<< HEAD
+    params = params || {};
+=======
     params = AWS.util.copy(params || {});
+>>>>>>> upstream/master
     var expires = params.Expires || 900;
     delete params.Expires; // we can't validate this
     var request = this.makeRequest(operation, params);
@@ -352,13 +356,16 @@ AWS.S3 = AWS.Service.defineService('s3', ['2006-03-01'], {
       var querystring = AWS.util.queryParamsToString(queryParams);
       endpoint.pathname = parsedUrl.pathname;
       endpoint.search = !parsedUrl.search ? querystring :
-                        parsedUrl.search + '&' + querystring;
+        parsedUrl.search + '&' + querystring;
     }
 
     request.on('build', signedUrlBuilder);
     request.on('sign', signedUrlSigner);
     request.removeListener('build', this.addContentType);
+<<<<<<< HEAD
+=======
     request.removeAllListeners('afterBuild');
+>>>>>>> upstream/master
     if (!params.Body) { // no Content-MD5/SHA-256 if body is not provided
       request.removeListener('build', this.computeContentMd5);
       request.removeListener('build', this.computeSha256);

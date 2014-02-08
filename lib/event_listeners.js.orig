@@ -70,6 +70,16 @@ AWS.EventListeners = {
 AWS.EventListeners = {
   Core: new AWS.SequentialExecutor().addNamedListeners(function(add, addAsync) {
     addAsync('VALIDATE_CREDENTIALS', 'validate',
+<<<<<<< HEAD
+      function VALIDATE_CREDENTIALS(req, doneCallback) {
+        req.service.config.getCredentials(function(err) {
+          if (err) {
+            err = AWS.util.error(err,
+              {code: 'SigningError', message: 'Missing credentials in config'});
+          }
+          doneCallback(err);
+        });
+=======
         function VALIDATE_CREDENTIALS(req, done) {
       req.service.config.getCredentials(function(err) {
         if (err) {
@@ -77,8 +87,8 @@ AWS.EventListeners = {
             {code: 'SigningError', message: 'Missing credentials in config'});
         }
         done();
+>>>>>>> upstream/master
       });
-    });
 
     add('VALIDATE_REGION', 'validate', function VALIDATE_REGION(req) {
       if (!req.service.config.region && !req.service.hasGlobalEndpoint()) {
@@ -200,18 +210,20 @@ AWS.EventListeners = {
 
       var http = AWS.HttpClient.getInstance();
       var httpOptions = resp.request.service.config.httpOptions || {};
+      // todo: test only
+      this.httpRequest.debug();
       var s = http.handleRequest(this.httpRequest, httpOptions, callback, error);
       progress(s);
     });
 
     add('HTTP_HEADERS', 'httpHeaders',
-        function HTTP_HEADERS(statusCode, headers, resp) {
-      resp.httpResponse.statusCode = statusCode;
-      resp.httpResponse.headers = headers;
-      resp.httpResponse.body = new AWS.util.Buffer('');
-      resp.httpResponse.buffers = [];
-      resp.httpResponse.numBytes = 0;
-    });
+      function HTTP_HEADERS(statusCode, headers, resp) {
+        resp.httpResponse.statusCode = statusCode;
+        resp.httpResponse.headers = headers;
+        resp.httpResponse.body = new AWS.util.Buffer('');
+        resp.httpResponse.buffers = [];
+        resp.httpResponse.numBytes = 0;
+      });
 
     add('HTTP_DATA', 'httpData', function HTTP_DATA(chunk, resp) {
       if (chunk) {
@@ -258,7 +270,7 @@ AWS.EventListeners = {
 
     add('REDIRECT', 'retry', function REDIRECT(resp) {
       if (resp.error && resp.error.statusCode >= 300 &&
-          resp.error.statusCode < 400 && resp.httpResponse.headers['location']) {
+        resp.error.statusCode < 400 && resp.httpResponse.headers['location']) {
         this.httpRequest.endpoint =
           new AWS.Endpoint(resp.httpResponse.headers['location']);
         resp.error.redirect = true;
@@ -291,6 +303,14 @@ AWS.EventListeners = {
       } else {
         done();
       }
+<<<<<<< HEAD
+
+      setTimeout(function() {
+        resp.request.emitEvent('send', resp, doneCallback);
+      }, delay);
+
+=======
+>>>>>>> upstream/master
     });
 
   }),
