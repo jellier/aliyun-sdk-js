@@ -5,10 +5,10 @@
   "endpointPrefix": "s3",
   "globalEndpoint": "s3.amazonaws.com",
   "serviceAbbreviation": "Amazon S3",
-  "serviceFullName": "Amazon Simple Storage Service",
-  "signatureVersion": "s3",
+  "serviceFullName": "Aliyun Open Storage Service",
+  "signatureVersion": "oss",
   "timestampFormat": "rfc822",
-  "xmlnamespace": "http://s3.amazonaws.com/doc/2006-03-01/",
+  "xmlnamespace": "",
   "operations": {
     "abortMultipartUpload": {
       "name": "AbortMultipartUpload",
