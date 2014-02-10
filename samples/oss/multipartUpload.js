@@ -1,23 +1,13 @@
 // Based on Glacier's example: http://docs.aws.amazon.com/AWSJavaScriptSDK/guide/examples.html#Amazon_Glacier__Multi-part_Upload
-var fs = require('fs');
-var AWS = require('../../index.js');
-
-var oss = new AWS.OSS({
-  endpoint: 'http://oss-test.aliyun-inc.com',
-  accessKeyId: 'pgvydev9bcbwpe3',
-  secretAccessKey: 'ZXJ1ZzZqbTdraWp4eTlkZWhmMGk=',
-  region: "us-west-1",
-  apiVersion: '2013-10-15',
-  httpOptions: {
-    //proxy: 'http://127.0.0.1:8888'
-  }
-});
+var oss = require('./oss');
 
 // -------------------------------
 // 5.5 Multipart Upload
 // -------------------------------
 
 // todo: Abort Multipart Upload, List Multipart Uploads, List Parts 没有sample
+
+var fs = require('fs');
 
 // File
 var fileName = 'test.mp3';
