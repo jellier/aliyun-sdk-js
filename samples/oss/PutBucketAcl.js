@@ -16,11 +16,9 @@ var oss = new ALY.OSS({
 // 5.3.10 Put Bucket Acl
 // -------------------------------
 
-// todo: not ready
-
-oss.createBucket({
+oss.putBucketAcl({
   Bucket: 'chylvina',
-  ACL: 'private'    // public-read-write || public-read || private
+  ACL: 'public-read-write'    // public-read-write || public-read || private
 }, function (err, data) {
   if (err) {
     console.log('error:', err);

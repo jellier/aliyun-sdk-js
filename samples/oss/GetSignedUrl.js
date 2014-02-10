@@ -16,8 +16,6 @@ var oss = new ALY.OSS({
 // 4.3
 // -------------------------------
 
-// todo: not ready
-
 var url = oss.getSignedUrl('getObject', {
   Bucket: 'chylvina',
   Key: '9.html',
