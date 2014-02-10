@@ -15,9 +15,9 @@ npm install aliyun-sdk
 ## 代码示例
 
 在 samples 目录下有各服务的代码示例，使用方法：
-1. 修改 sample/config.json，填入 accessKeyId 和 secretAccessKey
-2. 用编辑器打开需要执行的示例文件，修改其中的参数满足个人特定环境，然后保存
-3. 执行示例文件即可
+ - 修改 sample/config.json，填入 accessKeyId 和 secretAccessKey
+ - 用编辑器打开需要执行的示例文件，修改其中的参数满足个人特定环境，然后保存
+ - 执行示例文件即可
 
 ## 目前支持的服务
 
