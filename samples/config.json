@@ -1,7 +1,4 @@
 {
-  "endpoint": "http://oss-test.aliyun-inc.com",
   "accessKeyId": "pgvydev9bcbwpe3",
-  "secretAccessKey": "ZXJ1ZzZqbTdraWp4eTlkZWhmMGk=",
-  "region": "us-west-1",
-  "apiVersion": "2013-10-15"
+  "secretAccessKey": "ZXJ1ZzZqbTdraWp4eTlkZWhmMGk"
 }
