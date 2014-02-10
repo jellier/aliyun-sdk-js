@@ -1,7 +1,5 @@
-# 阿里云 SDK for JavaScript [![Version](https://badge.fury.io/js/aws-sdk.png)](http://badge.fury.io/js/aws-sdk) [![Build Status](https://travis-ci.org/aws/aws-sdk-js.png?branch=master)](https://travis-ci.org/aws/aws-sdk-js)
+# 阿里云 SDK for JavaScript
 
-The official AWS SDK for JavaScript, available for browsers and mobile devices,
-or Node.js backends
 阿里云 SDK for JavaScript, 基于AWS SDK开发。支持浏览器，手机浏览器和Node.js
 
 ## 安装
