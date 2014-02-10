@@ -6,13 +6,6 @@ or Node.js backends
 
 ## 安装
 
-### 浏览器安装
-
-To use the SDK in the browser, simply add the following script tag to your
-HTML pages:
-
-    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.0.0-rc9.min.js"></script>
-
 ### Node.js 安装
 
 ```sh
