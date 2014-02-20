@@ -1,16 +1,14 @@
 {
   "name": "aliyun-sdk",
   "description": "Aliyun SDK for JavaScript",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "author": {
-    "name":"chylvina",
-    "email":"chylvina@gmail.com",
-    "url":"http://chylvina.com"
+    "name": "chylvina",
+    "email": "chylvina@gmail.com",
+    "url": "http://chylvina.com"
   },
   "homepage": "https://github.com/chylvina/aliyun-sdk-js",
-  "contributors": [
-
-  ],
+  "contributors": [],
   "devDependencies": {
     "repl.history": "",
     "jasmine-node": "",
@@ -22,34 +20,35 @@
   },
   "dependencies": {
     "xml2js": "0.2.4",
-    "xmlbuilder": "0.4.2"
+    "xmlbuilder": "0.4.2",
+    "memjs": "~0.8.2"
   },
   "main": "index.js",
-  "directories":  {
+  "directories": {
     "lib": "lib"
   },
   "engines": {
     "node": ">= 0.6.0"
   },
   "repository": {
-    "type" : "git",
+    "type": "git",
     "url": "git://github.com/chylvina/aliyun-sdk-js.git"
   },
-  "bugs" : {
-    "url" : "https://github.com/chylvina/aliyun-sdk-js/issues",
-    "mail" : ""
+  "bugs": {
+    "url": "https://github.com/chylvina/aliyun-sdk-js/issues",
+    "mail": ""
   },
-  "licenses": [{
-    "type": "Apache 2.0"
-  }],
-  "keywords": [
-
+  "licenses": [
+    {
+      "type": "Apache 2.0"
+    }
   ],
-  "scripts" : {
-    "test" : "npm -s run-script lint && npm -s run-script unit && ([ -f configuration ] && npm -s run-script integration || true)",
-    "unit" : "jasmine-node --noColor --coffee test",
+  "keywords": [],
+  "scripts": {
+    "test": "npm -s run-script lint && npm -s run-script unit && ([ -f configuration ] && npm -s run-script integration || true)",
+    "unit": "jasmine-node --noColor --coffee test",
     "integration": "cucumber.js",
-    "lint" : "jshint lib",
+    "lint": "jshint lib",
     "console": "./scripts/console"
   }
 }

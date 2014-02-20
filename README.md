@@ -10,12 +10,22 @@
 npm install aliyun-sdk
 ```
 
-## 代码示例
+## 使用方法及代码示例
 
-在 samples 目录下有各服务的代码示例，使用方法：
- - 修改 sample/config.json，填入 accessKeyId 和 secretAccessKey
+# OSS
+在 samples/oss 目录下的代码示例，使用方法：
+ - 将 sample/oss/config_sample.json 另存为 sample/oss/config.json，填入代码中所需参数
  - 用编辑器打开需要执行的示例文件，修改其中的参数满足个人特定环境，然后保存
  - 执行示例文件即可
+
+# OCS
+在 samples/ocs 目录下的代码示例，使用方法：
+ - 修改 sample/ocs/ocs.js，填入代码中所需参数
+ - 用编辑器打开需要执行的示例文件，修改其中的参数满足个人特定环境，然后保存
+ - 执行示例文件即可
+
+更多帮助参考 https://github.com/alevy/memjs‎
+
 
 ## 目前支持的服务
 
@@ -29,6 +39,7 @@ SDK 目前支持下列服务:
   </thead>
   <tbody>
     <tr><td>Aliyun OSS</td><td>ALY.OSS</td><td>2013-10-15</td></tr>
+    <tr><td>Aliyun OCS</td><td>ALY.OCS</td><td></td></tr>
   </tbody>
 </table>
 

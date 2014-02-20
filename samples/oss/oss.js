@@ -1,6 +1,6 @@
 var ALY = require('../../index.js');
 
-ALY.config.loadFromPath(__dirname + '/../config.json');
+ALY.config.loadFromPath(__dirname + '/config.json');
 
 var oss = new ALY.OSS({
   endpoint: 'http://oss-cn-hangzhou.aliyuncs.com',
