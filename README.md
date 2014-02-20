@@ -12,13 +12,13 @@ npm install aliyun-sdk
 
 ## 使用方法及代码示例
 
-# OSS
+### OSS
 在 samples/oss 目录下的代码示例，使用方法：
  - 将 sample/oss/config_sample.json 另存为 sample/oss/config.json，填入代码中所需参数
  - 用编辑器打开需要执行的示例文件，修改其中的参数满足个人特定环境，然后保存
  - 执行示例文件即可
 
-# OCS
+### OCS
 在 samples/ocs 目录下的代码示例，使用方法：
  - 修改 sample/ocs/ocs.js，填入代码中所需参数
  - 用编辑器打开需要执行的示例文件，修改其中的参数满足个人特定环境，然后保存
