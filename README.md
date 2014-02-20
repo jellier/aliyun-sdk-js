@@ -24,7 +24,7 @@ npm install aliyun-sdk
  - 用编辑器打开需要执行的示例文件，修改其中的参数满足个人特定环境，然后保存
  - 执行示例文件即可
 
-更多帮助参考 https://github.com/alevy/memjs‎
+更多帮助参考 https://github.com/alevy/memjs
 
 
 ## 目前支持的服务
