@@ -21,7 +21,8 @@
   "dependencies": {
     "xml2js": "0.2.4",
     "xmlbuilder": "0.4.2",
-    "memjs": "~0.8.2"
+    "memjs": "~0.8.2",
+    "mysql": "~2.1.0"
   },
   "main": "index.js",
   "directories": {
