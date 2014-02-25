@@ -7,21 +7,21 @@ var client = require('./ocs');
 
 // todo: Get Quietly, Get Key, Get Key Quietly 尚未提供
 
-client.set('hello', 'world', function(err, data) {
+/*client.set('hello', 'world', function(err, data) {
   if(err) {
     console.log('error:', err);
     return;
   }
 
   console.log('success:', data);
-});
+});*/
 
 
-client.set('object', '{ a: 1, b: "string", c: [ 1, 2, 3], d: {}}', function(err, data) {
+client.set('object', '{"a":1,"b":"string","c":"[1, 2, 3]","d":{}}', function(err, data) {
   if(err) {
     console.log('error:', err);
     return;
   }
 
   console.log('success:', data);
-});
+}, 10);

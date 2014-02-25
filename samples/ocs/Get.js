@@ -7,11 +7,20 @@ var client = require('./ocs');
 
 // todo: Get Quietly, Get Key, Get Key Quietly 尚未提供
 
-client.get('hello', function(err, data) {
+/*client.get('hello', function(err, data) {
   if(err) {
     console.log('error:', err);
     return;
   }
 
   console.log('success:', data.toString());
+});*/
+
+client.get('object', function(err, data) {
+  if(err) {
+    console.log('error:', err);
+    return;
+  }
+
+  console.log('success:', JSON.parse(data.toString()));
 });

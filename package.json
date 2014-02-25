@@ -7,7 +7,7 @@
     "email": "chylvina@gmail.com",
     "url": "http://chylvina.com"
   },
-  "homepage": "https://github.com/chylvina/aliyun-sdk-js",
+  "homepage": "https://github.com/aliyun-UED/aliyun-sdk-js.git",
   "contributors": [],
   "devDependencies": {
     "repl.history": "",
@@ -33,10 +33,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/chylvina/aliyun-sdk-js.git"
+    "url": "git@github.com:aliyun-UED/aliyun-sdk-js.git"
   },
   "bugs": {
-    "url": "https://github.com/chylvina/aliyun-sdk-js/issues",
+    "url": "https://github.com/aliyun-UED/aliyun-sdk-js/issues",
     "mail": ""
   },
   "licenses": [
